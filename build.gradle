@@ -20,12 +20,14 @@ repositories {
 
 // 우리가 선택한 라이브러리 목록(추가 가능)
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web' // jackson 라이브러리 포함.
+	implementation 'org.springframework.boot:spring-boot-starter-web' 
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation 'javax.servlet:jstl:1.2'
 }
 
 tasks.named('test') {
