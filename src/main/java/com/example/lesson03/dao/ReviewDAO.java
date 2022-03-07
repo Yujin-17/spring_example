@@ -18,4 +18,9 @@ public interface ReviewDAO {
 			@Param("userName") String userName, 
 			@Param("point") double point, 
 			@Param("review") String review);
+	
+	public int updateReviewById(
+			@Param("id") int id, 
+			@Param("review") String review);		// Param 어노테이션 붙어있기 때문에 map 
+													// 파라미터 갯수가 2개 이상이면 무조건 param 어노테이션 붙여서 map처리 해야함 
 }

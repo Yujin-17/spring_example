@@ -44,7 +44,7 @@
  	
  	</insert>
  	
- 	<insert id="insertReviewAsField" parameterType="map"> <!-- 파라미터 타입이 다르게 넘어올 수 있음  -->
+ 	<insert id="insertReviewAsField" parameterType="map"> <!-- 파라미터 타입이 다르게 넘어올 수 있음 / 결과가 없기 때문에 resultType없음-->
  		INSERT INTO `new_review`
  		(
 			`storeId`
@@ -66,4 +66,13 @@
  			,NOW()
  		)
  	</insert>
+ 	
+ 	<update id="updateReviewById" parameterType="map"> <!-- update타입은 결과가 없기 때문에 resultType없음  -->
+ 		UPDATE `new_review`
+ 		SET
+ 			`review` = #{review}
+ 			, `updatedAt` = NOW()
+ 		WHERE
+ 			`id` = #{id}
+ 	</update>
  </mapper>
